@@ -5,6 +5,8 @@ import {renderPreact} from './preact/index.js';
 import {renderInferno} from './inferno/index.js';
 import {renderMithril} from './mithril/index.js';
 import {renderHandlebars} from './handlebars/index.js';
+import {renderArt} from './art-template/index.js';
+import {renderVanilla} from './vanilla/index.js';
 
 
 const DEV = process.env.DEV === 'true';
@@ -39,6 +41,13 @@ if (DEV) {
 	const moduleSolid = await import('./vite/server/solid/index.js');
 	renderSolid = moduleSolid.render;
 }
+
+fastify.get('/', async function (request, reply) {
+	const data = getData();
+	const html = await renderVanilla(data);
+	reply.header('content-type', 'text/html');
+	reply.send(html);
+});
 
 fastify.get('/svelte', async function (request, reply) {
 	const data = getData();
@@ -78,6 +87,13 @@ fastify.get('/mithril', async function (request, reply) {
 fastify.get('/handlebars', async function (request, reply) {
 	const data = getData();
 	const html = renderHandlebars(data);
+	reply.header('content-type', 'text/html');
+	reply.send(html);
+});
+
+fastify.get('/art', async function (request, reply) {
+	const data = getData();
+	const html = renderArt(data);
 	reply.header('content-type', 'text/html');
 	reply.send(html);
 });

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/PierBover/fastify-vite-ssr-benchmarks#readme",
   "dependencies": {
+    "art-template": "^4.13.2",
     "fastify": "^4.15.0",
     "handlebars": "^4.7.7",
     "inferno": "^8.1.0",

@@ -6,5 +6,5 @@
 | Solid 1.7.2 | 392.55reqs/s | 2.547s |
 | Mithril 2.2.2 | 113.25reqs/s | 8.83s |
 | Handlebars 4.7.7 | 345.07reqs/s | 2.898s |
-| art-template 4.13.2 | 351.57reqs/s | 2.844s |
+| art-template 4.13.2 | 367.57reqs/s | 2.721s |
 | Vanilla | 507.63reqs/s | 1.97s |

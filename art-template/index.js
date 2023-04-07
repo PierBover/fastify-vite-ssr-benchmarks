@@ -1,5 +1,8 @@
 import art from 'art-template';
 
+art.defaults.compileDebug = false;
+art.defaults.cache = true;
+
 const template = `
 {{each products}}
 	<div>

@@ -4,6 +4,7 @@ import {getData} from './data.js';
 import {renderPreact} from './preact/index.js';
 import {renderInferno} from './inferno/index.js';
 import {renderMithril} from './mithril/index.js';
+import {renderHandlebars} from './handlebars/index.js';
 
 
 const DEV = process.env.DEV === 'true';
@@ -70,6 +71,13 @@ fastify.get('/solid', async function (request, reply) {
 fastify.get('/mithril', async function (request, reply) {
 	const data = getData();
 	const html = renderMithril(data);
+	reply.header('content-type', 'text/html');
+	reply.send(html);
+});
+
+fastify.get('/handlebars', async function (request, reply) {
+	const data = getData();
+	const html = renderHandlebars(data);
 	reply.header('content-type', 'text/html');
 	reply.send(html);
 });

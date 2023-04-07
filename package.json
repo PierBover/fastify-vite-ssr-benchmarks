@@ -1,0 +1,42 @@
+{
+  "name": "fastify-vite-ssr-benchmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build-svelte": "vite build --outDir vite/server/svelte --ssr svelte/index.js",
+    "build-solid": "vite build --outDir vite/server/solid --ssr solid/index.jsx",
+    "dev": "nodemon",
+    "start": "npm run build-svelte && npm run build-solid && NODE_ENV=production node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PierBover/fastify-vite-ssr-benchmarks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PierBover/fastify-vite-ssr-benchmarks/issues"
+  },
+  "homepage": "https://github.com/PierBover/fastify-vite-ssr-benchmarks#readme",
+  "dependencies": {
+    "fastify": "^4.15.0",
+    "inferno": "^8.1.0",
+    "inferno-create-element": "^8.1.0",
+    "inferno-server": "^8.1.0",
+    "mithril": "^2.2.2",
+    "mithril-node-render": "^3.0.2",
+    "preact": "^10.13.2",
+    "preact-render-to-string": "^6.0.2",
+    "solid-js": "^1.7.2"
+  },
+  "devDependencies": {
+    "@fastify/middie": "^8.1.0",
+    "@sveltejs/vite-plugin-svelte": "^2.0.4",
+    "nodemon": "^2.0.22",
+    "vite": "^4.2.1",
+    "vite-plugin-solid": "^2.7.0"
+  }
+}

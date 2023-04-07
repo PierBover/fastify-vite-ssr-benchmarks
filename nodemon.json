@@ -1,0 +1,9 @@
+{
+	"verbose": false,
+	"watch": ["."],
+	"ignore": ["src/static"],
+	"ext": "js",
+	"exec": "DEV=true node index.js",
+	"legacyWatch": false,
+	"delay": 250
+}
